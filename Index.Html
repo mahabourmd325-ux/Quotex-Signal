@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quotex লাইভ সিগন্যাল</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #00ffcc;
+    }
+    #signalBox {
+      margin-top: 30px;
+      font-size: 24px;
+      padding: 20px;
+      background-color: #222;
+      border-radius: 10px;
+      border: 2px solid #00ffcc;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔴 লাইভ কোটেক্স সিগন্যাল</h1>
+  <div id="signalBox">সিগন্যাল লোড হচ্ছে...</div>
+
+  <script>
+    // এই জায়গায় আপনি আপনার API বা Firebase URL বসাতে পারেন
+    const signals = [
+      "EUR/USD 🟢 Buy",
+      "USD/JPY 🔴 Sell",
+      "GBP/USD 🟢 Buy",
+      "BTC/USD 🔴 Sell",
+      "AUD/USD 🟢 Buy"
+    ];
+
+    function loadSignal() {
+      const randomIndex = Math.floor(Math.random() * signals.length);
+      document.getElementById("signalBox").innerText = signals[randomIndex];
+    }
+
+    // প্রথম লোড
+    loadSignal();
+
+    // প্রতি 30 সেকেন্ডে নতুন সিগন্যাল দেখাবে
+    setInterval(loadSignal, 30000);
+  </script>
+
+</body>
+</html>
